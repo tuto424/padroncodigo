@@ -1,988 +1,154 @@
 <!DOCTYPE html>
 <!-- saved from url=(0019)http://miro/padrao/ -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>v3o2 - Padrão de Código</title>
-
-    <link href="./files/bootstrap.min.css" rel="stylesheet">
-    <link href="./files/docs.min.css" rel="stylesheet">
-
-    <style>
-    html {
-      position: relative;
-      min-height: 100%;
-    }
-    body {
-      margin-bottom: 90px;
-    }
-    .footer {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 60px;
-      background-color: #eee;
-    }
-    .affix {
-      top: 20px;
-    }
-    .footercontainer {
-      width: auto;
-      text-align: center;
-      padding: 0 15px;
-    }
-    .footercontainer .text-muted {
-      margin: 20px 0;
-    }
-    table {
-      width:100%;
-    }
-    table, th, td {
-      border-collapse: collapse;
-    }
-    th, td {
-      padding: 5px;
-      text-align: left;
-    }
-    table#sectiontable tr:nth-child(even) {
-      background-color: #fff;
-    }
-    table#sectiontable tr:nth-child(odd) {
-     background-color: #eee;
-    }
-    table#sectiontable th	{
-      background-color: black;
-      color: white;
-    }
-    </style>
-  </head>
-  <body>
-    <div class="container"> 
-      <div class="header"> 
-        <h3 class="text-muted">v3o2</h3> 
-      </div> 
-      <div class="jumbotron"> 
-        <h1>Padrão de Código</h1>
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>v3o2 - Padrão de Código</title>
+      <link href="./files/bootstrap.min.css" rel="stylesheet">
+      <link href="./files/docs.min.css" rel="stylesheet">
+      <style>
+         html {
+         position: relative;
+         min-height: 100%;
+         }
+         body {
+         margin-bottom: 90px;
+         }
+         .footer {
+         position: absolute;
+         bottom: 0;
+         width: 100%;
+         height: 60px;
+         background-color: #eee;
+         }
+         .affix {
+         top: 20px;
+         }
+         .footercontainer {
+         width: auto;
+         text-align: center;
+         padding: 0 15px;
+         }
+         .footercontainer .text-muted {
+         margin: 20px 0;
+         }
+         table {
+         width:100%;
+         }
+         table, th, td {
+         border-collapse: collapse;
+         }
+         th, td {
+         padding: 5px;
+         text-align: left;
+         }
+         table#sectiontable tr:nth-child(even) {
+         background-color: #fff;
+         }
+         table#sectiontable tr:nth-child(odd) {
+         background-color: #eee;
+         }
+         table#sectiontable th	{
+         background-color: black;
+         color: white;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="container">
+         <div class="header">
+            <h3 class="text-muted">v3o2</h3>
+         </div>
+         <div class="jumbotron">
+            <h1>Patron de Código</h1>
+         </div>
       </div>
-    </div>
-    <div class="container bs-docs-container">
-      <div class="row">
-        <div class="col-md-9" role="main">
-          <div class="bs-docs-section">
-            <h1 id="section1" class="page-header">Regras Gerais</h1>
-            <div class="lead">
-
-<!---------------------------------------------------------------------------->
-
-            </div>
-            <table id="sectiontable">
-              <tbody><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>1.</h4>
-                </td>
-                <td>
-                  <h4>Uma classe deve ser declarada em um arquivo de <strong>cabeçalho</strong> e definida em um arquivo <strong>fonte</strong> com nome exatamente igual ao nome da <strong>classe</strong></h4>
-                  <div id="section1rule1" class="collapse">
-
-<h3>Exemplos:</h3>
-
-<pre><code>MyClass.h e MyClass.cpp (para a classe MyClass)
-Point.h e Point.cpp (para a classe Point)
-</code></pre>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
+      <div class="container bs-docs-container">
+         <div class="row">
+            <div class="col-md-9" role="main">
+               <div class="bs-docs-section">
+                  <h1 id="section2" class="page-header">Buenas Práticas</h1>
+                  <div class="lead">
+                     <!---------------------------------------------------------------------------->
                   </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section1rule1">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>2.</h4>
-                </td>
-                <td>
-                  <h4>Todos os arquivo de cabeçalho devem incluir a diretiva de pré-processamento <strong>#pragma once</strong></h4>
-                  <div id="section1rule2" class="collapse">
-
-<ul>
-<li>Serve para fazer com que o arquivo atual seja incluído apenas uma vez durante
-o processo de compilação.</li>
-<li>Os include guards tem sintaxe mais complexa e não promovem benefícios.</li>
-</ul>
-
-<h3>Exemplos:</h3>
-
-<pre><code>// Certo:
-#pragma once
-
-class Window // ...
-
-// Errado:
-#ifndef WINDOW_H
-#define WINDOW_H
-
-class Window // ...
-
-#endif  /* WINDOW_H */
-</code></pre>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section1rule2">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>3.</h4>
-                </td>
-                <td>
-                  <h4>Inicializar membros da classe na lista de inicialização ou na declaração da classe</h4>
-                  <div id="section1rule3" class="collapse">
-
-<ul>
-<li>Deve-se sempre inicializar todos membros de uma classe utilizando a lista de inicialização de cada construtor (se houver mais de um). Isto é importante para não utilizar um destes membros não inicializado (pode causar um comportamento inesperado ou até mesmo abortar).</li>
-</ul>
-
-<h3>Exemplos:</h3>
-
-<pre><code>struct S
-{
-    // Neste consturor a variavel index é inicializada com valor declarado na classe
-    S(float x) : _number(x) {}
-    S(int n, float x) : _index(n), _number(x) {}
-
-    int _index = 0;
-    float _number;
-}
-</code></pre>
-
-<h3>Referências:</h3>
-
-<p><a href="http://en.cppreference.com/w/cpp/language/initializer_list">http://en.cppreference.com/w/cpp/language/initializer_list</a></p>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section1rule3">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>4.</h4>
-                </td>
-                <td>
-                  <h4>Use <code>nullptr</code> no lugar de NULL ou 0</h4>
-                  <div id="section1rule4" class="collapse">
-
-<ul>
-<li>É mais fácil de identificar semanticamente que estamos tratando de ponteiro.</li>
-<li>O <code>nullptr</code> se converte implicitamente para todo tipo de ponteiro, mas não para
-outros tipos (inteiro por exemplo).</li>
-</ul>
-
-<h3>Exemplos:</h3>
-
-<pre><code>void f(int) { std::cout &lt;&lt; "int\n"; }
-void f(int*) { std::cout &lt;&lt; "int*\n"; }
-int* g();
-
-int main()
-{
-    f(0);                   // prints 'int'
-    f(NULL);                // prints 'int'
-    f(nullptr);             // prints 'int*'
-    return 0;
-}
-</code></pre>
-
-<h3>Referências:</h3>
-
-<p><a href="https://www.ibm.com/developerworks/community/blogs/5894415f-be62-4bc0-81c5-3956e82276f3/entry/nulllptr_in_c_11?lang=en" title="IBM Community Blog: FanLu">nullptr in C++11 by FanLu</a></p>
-
-<p><a href="https://isocpp.org/wiki/faq/freestore-mgmt#null-or-zero" title="Should I use NULL or zero">ISO C++ FAQ - Should I use NULL or zero</a></p>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section1rule4">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>5.</h4>
-                </td>
-                <td>
-                  <h4>Conversões de tipo devem ser feitas explicitamente e utilizando os <strong>casts</strong> de c++</h4>
-                  <div id="section1rule5" class="collapse">
-
-<ul>
-<li>Para ponteiros e referências, deve-se sempre usar os casts de c++:
-<code>static_cast</code>, <code>dynamic_cast</code> ou <code>reinterpret_cast</code>.</li>
-<li>Para remover o qualificador const deve-se utilizar o <code>const_cast</code>.</li>
-<li>Para tipos básicos, pode-se usar os casts de C.</li>
-</ul>
-
-<h3>Exemplos:</h3>
-
-<pre><code>// Quando se tem certeza que a referência é do tipo derivado:
-auto&amp; derived = static_cast&lt;Derived&amp;&gt;(base);
-
-// Quando não se sabe qual o tipo da referência:
-if(auto derived = dynamic_cast&lt;Derived*&gt;(base))
-{
-    // ...
-}
-
-// Quando não há relação polimórfica:
-auto gtkptr = reinterpret_cast&lt;void*&gt;(myptr);
-auto myptr = reinterpret_cast&lt;MyType*&gt;(gtkptr);
-
-// Remoção de const:
-int foo(const MyType&amp; constValue)
-{
-    auto&amp; value = const_cast&lt;MyType&amp;&gt;(constValue);
-    // ...
-}
-
-// Tipos básicos:
-double value = 123.456;
-int truncated = (int)value;
-</code></pre>
-
-<h3>Referências:</h3>
-
-<p><a href="https://www.tutorialspoint.com/cplusplus/cpp_casting_operators.htm">C++ Casting Operators</a></p>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section1rule5">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>6.</h4>
-                </td>
-                <td>
-                  <h4>Use <strong>enum</strong> com escopo (enum class)</h4>
-                  <div id="section1rule6" class="collapse">
-
-<p>O uso de <em>enum</em> com escopo ("<em>strong enums</em>") permite:</p>
-
-<ul>
-<li>Verificar se o valor pertence ao enum correto.</li>
-<li>Reduzir a poluição do namespace.</li>
-</ul>
-
-<p>Resolve alguns problemas relacionados aos <em>enum</em> sem escopo:</p>
-
-<ul>
-<li>São implicitamente convertidos para valores inteiros (<em>int, uint, long, long
-long, etc</em>) de acordo com a necessidade de armazenamento.</li>
-<li>Exportam seus enumeradores para o escopo adjacente, causando conflito de
-nomes.</li>
-<li>Seu tipo básico não pode ser especificado, causando problemas de
-compatibilidade e tornando o uso de <em>forward declaration</em> impossível.</li>
-</ul>
-
-<h3>Exemplos:</h3>
-
-<pre><code>// Não compila: redeclaração de Red
-enum Color {Red, Blue, White};            
-enum TrafficLight {Red, Green, Yellow};
-
-// Ok 
-enum class Color {Red, Blue, White};
-enum class TrafficLight {Red, Green, Yellow};
-</code></pre>
-
-<h3> </h3>
-
-<pre><code>enum E {E1 = 1, E2 = 2, Ebig = 0xFFFFFFF0U};   // Qual o tipo de E? int? long?
-                                              // "implementation defined"
-
-enum class TrafficLight {Red, Yellow, Green};  // Por default, o tipo básico é int
-
-enum class Color : char {Red, Blue, White};    // Agora pode ser especificado (char)
-</code></pre>
-
-<h3> </h3>
-
-<pre><code>enum class ColorCode;               // (forward) declaration
-void setColor(const ColorCode&amp; c);  // uso do tipo da forward declaration
-</code></pre>
-
-<h3>Referências:</h3>
-
-<p><a href="http://en.cppreference.com/w/cpp/language/enum" title="C++ Reference: enum">cppreference.com - Scoped Enum</a></p>
-
-<p><a href="http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#S-enum" title="C++ Core Guidelines - Enum">C++ Core Guidelines - Enum</a></p>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section1rule6">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>7.</h4>
-                </td>
-                <td>
-                  <h4>Use <strong>= default</strong> e <strong>= delete</strong></h4>
-                  <div id="section1rule7" class="collapse">
-
-<h4>= default</h4>
-
-<ul>
-<li>Usado unicamente nos métodos especiais (construtores/destrutores).</li>
-<li>Instrui o compilador a gerar a função com comportamento <em>default</em>.</li>
-<li>É mais eficiente que um construtor com corpo vazio porque este é
-<em>non-trivial</em> para o compilador.</li>
-</ul>
-
-<h4>= delete</h4>
-
-<ul>
-<li>Usado em qualquer método.</li>
-<li>Define a função como deletada. Proíbe explicitamente determinadas funções
-membro, gerando erro de compilação caso seja chamada.</li>
-<li>Previne conversões de tipo indesejadas.</li>
-</ul>
-
-<h3>Exemplos:</h3>
-
-<pre><code>class Widget
-{  
-public:
-    // Constructor default
-    Widget() = default;
-
-    // Não permite realizar cópia do objeto
-    Widget(const Widget&amp;) = delete;
-    Widget&amp; operator=(const Widget&amp;) = delete;
-
-    // Previne conversões não desejadas
-    void doSomething(long long value);  // Só pode ser inicializado com long long
-    void doSomething(long) = delete;    // Mas não com valores menores
-};
-</code></pre>
-
-<h3>Referências:</h3>
-
-<p><a href="https://isocpp.org/wiki/faq/cpp11-language-classes#default-delete">ISO C++11 FAQ: =default and =delete</a></p>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section1rule7">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>8.</h4>
-                </td>
-                <td>
-                  <h4>Use <strong>override</strong> e <strong>final</strong></h4>
-                  <div id="section1rule8" class="collapse">
-
-<ul>
-<li>Use override para indicar uma função que sobrescreve um método virtual da
-classe base, indicando ao compilador para verificar se ambos possuem a mesma
-assinatura.</li>
-<li>Use final para indicar que uma função virtual da classe base não possa ser
-sobreescrita pela classe derivada.</li>
-<li>Use final para indicar que um classe não pode ser usada como classe base.</li>
-<li>Em caso de inconsistências, o uso de override e final gera erros em tempo de
-compilação.</li>
-</ul>
-
-<h3>Exemplos:</h3>
-
-<pre><code>struct Base
-{
-    virtual void foo();
-};
-
-struct A : Base
-{
-    void foo() final;           // A::foo() is overridden and it is the final override
-    void foo(int i) override;   // Error: A::foo(int) does not override Base::foo()
-                                // (signature mismatch)
-};
-
-struct B final : A              // struct B is final
-{
-    void foo() override;        // Error: foo cannot be overridden as it's final in A
-};
-
-struct C : B                    // Error: B is final
-{
-};
-</code></pre>
-
-<h3>Referências:</h3>
-
-<p><a href="https://isocpp.org/wiki/faq/cpp11-language-classes#override">ISO C++ FAQ: Override controls: override</a></p>
-
-<p><a href="https://isocpp.org/wiki/faq/cpp11-language-classes#final">ISO C++ FAQ: Override controls: final</a></p>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section1rule8">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>9.</h4>
-                </td>
-                <td>
-                  <h4>Use apelidos para tipos complexos e prefira <strong>using</strong> ao invés de <strong>typedef</strong></h4>
-                  <div id="section1rule9" class="collapse">
-
-<p>Tipos oriundos de instanciações de templates são fortes candidatos a receberem
-apelidos(<em>alias declarations</em>). Facilita a codificação, manutenção e
-legibilidade. Apelidos para tipos devem ser através da diretiva
-<strong>using</strong>(C++11) ao invés de <strong>typedef</strong>(C++98). A nova forma permite
-parametrização genérica(<em>alias templates</em>)[1] e é mais legível para ponteiros
-para função.</p>
-
-<p>[1] A solução C++98 é um <code>typedef</code> aninhado(<code>T::type</code>), que é mais <em>verbose</em> e
-pede o uso da diretiva <code>typename</code> no uso do apelido.</p>
-
-<h3>Exemplos:</h3>
-
-<pre><code>template&lt;std::size_t Index, typename T&gt;
-using VBO = BufferObject&lt;
-    T,
-    ArrayBuffer&lt;Index, typename T::value_type&gt;
-&gt;;
-
-using Key = std::string;
-
-using function_ptr = result_type (*)(int);
-</code></pre>
-
-<h3>Referências:</h3>
-
-<p>Meyers, S., <strong>Effective Modern C++: 42 specific ways to improve your use of C++11 and C++14</strong></p>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section1rule9">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>10.</h4>
-                </td>
-                <td>
-                  <h4>Usar <strong>using</strong> no menor escopo possível, não usar <strong>using namespace</strong> no escopo global</h4>
-                  <div id="section1rule10" class="collapse">
-
-<p>Ao fazer a chamada <strong><em>using namespace</em></strong> dentro de um header, tudo que pertence
-ao escopo do namespace é trazido para o escopo global de todos os arquivos
-fontes que incluem esse header, podendo assim causar inadvertidamente conflito
-de nomes.</p>
-
-<ul>
-<li>O uso de <strong><em>using directive</em></strong> (<em>using namespace</em> X) fará com que todos os
-nomes do namespace X fiquem visíveis (apenas para motivos de <em>lookup</em>) no
-namespace mais próximo que encapsula o namespace corrente e o namespace X.</li>
-<li>O uso de <strong><em>using declaration</em></strong> (<em>using</em> X::Y) fará com que o nome seja
-declarado no escopo corrente.</li>
-</ul>
-
-<h3>Observações:</h3>
-
-<ul>
-<li><p>O uso de <strong><em>using directive</em></strong> e <strong><em>using declaration</em></strong> não são equivalentes. </p></li>
-<li><p>No exemplo abaixo, ao usar o <strong><em>using directive</em></strong>, a função <code>std::swap</code>
-fica disponível no namespace mais próximo que encapsula os namespaces
-<code>::V3O2</code> e <code>::std</code>, que no caso é o namespace global <code>::</code>. Quando
-ocorrer o <em>lookup</em> da função, ele será feito a partir do escopo da função,
-depois o da classe, o do namespace <code>::V3O2</code>, e assim vai até por fim o
-escopo global. Nesse caso a função <code>::V3O2::swap</code> será encontrada no
-escopo do namespace e será a função chamada.</p></li>
-<li><p>Ao usar o <strong><em>using declaration</em></strong>, a função <code>std::swap</code> é introduzida no
-escopo corrente, no caso no escopo da função <strong>doSomething()</strong>. Quando
-ocorrer o <em>lookup</em>, a função <code>::std::swap</code> será encontrada no contexto da
-função, e não será necessário procurar no contexto da classe, do namespace
-<code>::V3O2</code>, etc. </p></li>
-</ul>
-
-<h3>Exemplos:</h3>
-
-<pre><code>#include &lt;utility&gt;
-#include &lt;iostream&gt;
-
-namespace v3o2 {
-
-template&lt;class T&gt; 
-void swap(T&amp; a, T&amp; b)
-{
-    std::cout &lt;&lt; "Custom swap function" &lt;&lt; std::endl;
-    T c(std::move(a));
-    a = std::move(b);
-    b = std::move(c);
-}
-
-void doSomething()
-{
-    int a = 20;
-    int b = 0;
-
-    // Usando using directive vai fazer com que a função de swap definida
-    // no namespace v3o2 seja chamada (v3o2::swap)
-    using namespace std;
-    swap(a, b);
-
-    // Usando using declaration vai fazer com que a função de swap definida 
-    // na STL seja chamada
-    using std::swap;
-    swap(a, b);
-}
-
-}
-</code></pre>
-
-<h3>Referências:</h3>
-
-<p><a href="https://isocpp.org/wiki/faq/coding-standards#using-namespace-std">ISO C++ FAQ: Coding Standards</a></p>
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section1rule10">+</button>
-                </td>
-            </tr></tbody></table>
-          </div>
-          <div class="bs-docs-section">
-            <h1 id="section2" class="page-header">Boas Práticas</h1>
-            <div class="lead">
-
-<!---------------------------------------------------------------------------->
-
-            </div>
-            <table id="sectiontable">
-              <tbody><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>1.</h4>
-                </td>
-                <td>
-                  <h4>Variáveis globais devem ser evitadas</h4>
-                  <div id="section2rule1" class="collapse">
-
-<ul>
-<li>Em C++ não existe razão para que variáveis globais sejam utilizadas.</li>
-<li>O mesmo se aplica a funções globais e a variáveis estáticas com escopo de arquivo.</li>
-</ul>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section2rule1">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>2.</h4>
-                </td>
-                <td>
-                  <h4>Variáveis devem ser declaradas no menor escopo possível e mais próximo da sua utilização</h4>
-                  <div id="section2rule2" class="collapse">
-
-<ul>
-<li>Mantendo as operações sobre uma variável em um escopo pequeno, fica mais fácil controlar os efeitos da variável.</li>
-</ul>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section2rule2">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>3.</h4>
-                </td>
-                <td>
-                  <h4>O uso de números mágicos no código deve ser evitado</h4>
-                  <div id="section2rule3" class="collapse">
-
-<ul>
-<li>Números que não sejam 0 nem 1 devem ser declarados como constantes. Se o número não tem significado por si só, usar uma constante aumenta a legibilidade.</li>
-<li>Outra abordagem é criar uma função que retorna o valor da constante.</li>
-</ul>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section2rule3">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>4.</h4>
-                </td>
-                <td>
-                  <h4>auto</h4>
-                  <div id="section2rule4" class="collapse">
-
-<ul>
-<li>Facilita na definição de tipos com nomes grandes e/ou com namespace, tornando o código menor e mais legível.</li>
-<li>Utilize os modificadores <em>const</em> e <em>&amp;</em>.</li>
-<li>Utilize na declaração de um <strong>for</strong> <em>range-based</em>.</li>
-</ul>
-
-<h3>Observações:</h3>
-
-<p>[1] O tipo da variável é definido em tempo de compilação.</p>
-
-<p>[2] Existem algumas aplicações mais abrangentes a partir de <em>C++14</em>, verifique se o que você deseja/precisa utilizar se enquadra no padrão atual (<em>C++11</em>).</p>
-
-<h3>Exemplos:</h3>
-
-<pre><code>// Definição de um tipo de acordo com o retorno de uma função
-// Aqui o método getVector() retorna const std::vector&lt;float&gt;&amp;, por exemplo, e este será o tipo da variável vector.
-const auto&amp; vector = SomePointer-&gt;getVector()
-
-// Simplificação na declaração de um tipo que seria grande para ser declarado
-auto castPointer = dynamic_cast&lt; BigNamespace::BiggerClassName* &gt; pointer;
-</code></pre>
-
-<h3>Referências:</h3>
-
-<p><a href="http://en.cppreference.com/w/cpp/language/auto">http://en.cppreference.com/w/cpp/language/auto</a></p>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section2rule4">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>5.</h4>
-                </td>
-                <td>
-                  <h4>Use namespaces</h4>
-                  <div id="section2rule5" class="collapse">
-
-<p>TODO</p>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section2rule5">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>6.</h4>
-                </td>
-                <td>
-                  <h4>Uso de bibliotecas externas com licença compatível</h4>
-                  <div id="section2rule6" class="collapse">
-
-<p>exemplo: glm</p>
-
-<p>TODO</p>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section2rule6">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>7.</h4>
-                </td>
-                <td>
-                  <h4>Utilizar <strong>for</strong> <em>range-based</em></h4>
-                  <div id="section2rule7" class="collapse">
-
-<ul>
-<li>Código mais fácil de ser escrito e lido</li>
-</ul>
-
-<h3>Exemplos:</h3>
-
-<pre><code>int main() 
-{
-    std::vector&lt; int &gt; v = { 0, 1, 2, 3, 4, 5 };
-
-    for( const int&amp; i : v )
-    {
-        std::cout &lt;&lt; i &lt;&lt; ' ';
-    }
-    std::cout &lt;&lt; '\n';
-}
-
-Output: 0 1 2 3 4 5
-</code></pre>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section2rule7">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>8.</h4>
-                </td>
-                <td>
-                  <h4>Utilizar <strong>noexcept</strong> para especificar que a função lança exceção ou não</h4>
-                  <div id="section2rule8" class="collapse">
-
-<ul>
-<li>Especifica que a função não lança exceção.</li>
-<li>Funções marcadas como <strong>noexcept</strong> podem chamar outras função que lancem exceções, mas devem garantir que a exceção não seja propagada, caso contrário a função <code>std::terminate</code> será chamada.</li>
-<li>Algumas das principais funções que se beneficiam de <strong>noexcept</strong>:
-<ul>
-<li>Operações de move (<em>move assignment</em> e <em>move constructor</em>) [1]</li>
-<li>Funções de swap</li>
-<li>Memory deallocators [2]</li>
-<li>Destrutores (já são implicitamente definidos como noexcept(true)) [2]</li>
-<li>Qualquer outra função que as citadas acima precise chamar</li>
-</ul></li>
-</ul>
-
-<h3>Observações:</h3>
-
-<p>[1] O uso de <strong><em>noexcept</em></strong> pode melhorar o desempenho ao permitir o compilador escolher algoritmos mais eficientes. Um exemplo é o método <code>std::vector::resize</code>, que pode forçar o <em>vector</em> a fazer uma nova alocação de memória para guardar o conteúdo e mover ou copiar os elementos para esse novo espaço de memória alocado. Para realocar os elementos, o método utiliza a função <code>std::move_if_noexcept</code>, que retorna um <code>rvalue reference</code> caso o construtor de move esteja definido como <strong><em>noexcept</em></strong>; ou retorna um <code>const lvalue reference</code> caso o construtor esteja definido como <strong><em>noexcept(false)</em></strong>, ocasionando em uma chamada do construtor de cópia. <em>Traits</em> como <code>std::is_nothrow_move_constructible</code> e <code>std::is_nothrow_move_assignable</code> também permitem otimizações semelhantes.</p>
-
-<p>[2] A garantia de não lançar exceção é necessária em caso de <em>stack unwinding</em>.</p>
-
-<h3>Exemplos:</h3>
-
-<pre><code>void f() noexcept; // A função f() não lançará exceção
-
-// Especifica que a função swap é noexcept se o construtor de move e o operador de assignment
-// não lançarem exceções
-template&lt; typename T &gt;
-void swap( T &amp; a, T &amp; b )
-noexcept( std::is_nothrow_move_constructible&lt;T&gt;::value &amp;&amp;
-          std::is_nothrow_move_assignable&lt;T&gt;::value )
-{
-    T tmp( move(a) );
-    a = move(b);
-    b = move(tmp);
-}
-</code></pre>
-
-<h3>Referências:</h3>
-
-<p>Meyers, S., <strong>Effective Modern C++: 42 specific ways to improve your use of C++11 and C++14</strong></p>
-
-<p><a href="http://www.ibm.com/support/knowledgecenter/SSPSQF_9.0.0/com.ibm.xlcpp111.aix.doc/language_ref/cplr155.html">IBM Knowledge Center: Stack unwinding </a></p>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section2rule8">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>9.</h4>
-                </td>
-                <td>
-                  <h4>Utilizar std::isnan para saber se valor é <em>not-a-number (NaN)</em></h4>
-                  <div id="section2rule9" class="collapse">
-
-<ul>
-<li>Evite comparar um valor com ele mesmo para saber se é <em>nan</em></li>
-<li>Mais legível</li>
-</ul>
-
-<h3>Exemplos:</h3>
-
-<pre><code>std::isnan( DBL_MIN / 2.0 ); // Retorna false
-std::isnan( 0.0 / 0.0 ); // Retorna true
-</code></pre>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section2rule9">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>10.</h4>
-                </td>
-                <td>
-                  <h4>Expressões condicionais complexas devem ser evitadas</h4>
-                  <div id="section2rule10" class="collapse">
-
-<ul>
-<li>É melhor introduzir variáveis booleanas temporárias. Desta forma o programa ganha uma documentação automática.</li>
-<li>O código fica mais fácil de ler, depurar e manter.</li>
-</ul>
-
-<h3>Exemplos:</h3>
-
-<pre><code>bool isFinished = (elementNo &lt; 0) || (elementNo &gt; maxElement);
+                  <table id="sectiontable">
+                     <tbody>
+                        <tr>
+                           <td style="vertical-align: text-top;">
+                              <h4>2.</h4>
+                           </td>
+                           <td>
+                              <h4>Las variables deben declararse en el menor escopo posible y más próximo a su utilización</h4>
+                              <div id="section2rule2" class="collapse">
+                                 <ul>
+                                    <li>Manteniendo las operaciones sobre una variable en un escopo pequeño, es más fácil controlar los efectos de la variable.
+.</li>
+                                 </ul>
+                                 <!---------------------------------------------------------------------------->
+                                 <br>
+                              </div>
+                           </td>
+                           <td style="vertical-align: text-top;">
+                              <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section2rule2">+</button>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="vertical-align: text-top;">
+                              <h4>3.</h4>
+                           </td>
+                           <td>
+                              <h4>El uso de números mágicos en el código debe ser evitado</h4>
+                              <div id="section2rule3" class="collapse">
+                                 <ul>
+                                    <li>Los números que no sean 0 ni 1 se declararán constantes. Si el número no tiene significado por sí mismo, utilizar una constante aumenta la legibilidad.</li>
+                                    <li>Otro enfoque es crear una función que devuelve el valor de la constante.</li>
+                                 </ul>
+                                 <!---------------------------------------------------------------------------->
+                                 <br>
+                              </div>
+                           </td>
+                           <td style="vertical-align: text-top;">
+                              <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section2rule3">+</button>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="vertical-align: text-top;">
+                              <h4>10.</h4>
+                           </td>
+                           <td>
+                              <h4>Las expresiones condicionales complejas deben evitarse</h4>
+                              <div id="section2rule10" class="collapse">
+                                 <ul>
+                                    <li>Es mejor introducir variables booleanas temporales. De esta forma el programa gana una documentación automática.</li>
+                                    <li>El código es más fácil de leer, depurar y mantener.</li>
+                                 </ul>
+                                 <h3>Exemplos:</h3>
+                                 <pre><code>bool isFinished = (elementNo &lt; 0) || (elementNo &gt; maxElement);
 bool isRepeatedEntry = (elementNo == lastElement);
 if (isFinished || isRepeatedEntry)
 {
    ...
 }
 </code></pre>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section2rule10">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>11.</h4>
-                </td>
-                <td>
-                  <h4>Gerenciamento automático de recursos</h4>
-                  <div id="section2rule11" class="collapse">
-
-<p>Não gerencie manualmente recursos com propriedade definida. Memória, periféricos, arquivos e <em>mutexes</em> são exemplos de recursos e a propriedade sob o mesmo pode ser individual ou compartilhada. Utilize o idioma <strong>RAII</strong>(<em>Resource Acquisition Is Initialization</em>) como solução. A obtenção do recurso ocorre no momento em que o objeto que o representa é inicializado e a sua liberação ocorre quando o objeto é destruído.</p>
-
-<p>Para gerenciar memória, as implementações de <em>Smart Pointers</em> devem ser utilizadas, que nada mais são do que usos do <strong>RAII</strong>. Prefira quando possível as implementações da biblioteca padrão, <code>std::unique_ptr</code>, <code>std::shared_ptr</code> e <code>std::weak_ptr</code>. </p>
-
-<p>Se o recurso for memória com desalocação que não seja um <em>delete</em> ou <em>delete[]</em>, <code>std::unique_ptr</code> e <code>std::shared_ptr</code> podem ser utilizados através da customização do <em>deleter</em>, por exemplo, um <em>Widget GTK</em> pode estar associado a um <code>std::unique_ptr</code> customizado para chamar <code>gtk_widget_destroy()</code> no seu destrutor.</p>
-
-<p>Recursos que não são memória ou <em>mutexes</em> podem ser gerenciados através de implementações customizadas de <strong>RAII</strong>. A implementação mínima é o recurso ser adquirido na inicialização e liberado na destruição. É uma boa prática manter uma abstração de <strong>RAII</strong> para cada recurso.</p>
-
-<h3>Exemplo:</h3>
-
-<pre><code>struct FTLibrary
-{
-    FTLibrary()
-    {
-        FT_Init_FreeType(&amp;ft);
-    }
-    ~FTLibrary()
-    {
-        if(ft) FT_Done_FreeType(ft);
-    }
-    // operator=, copy ctor e etc
-    FT_Library ft{nullptr};
-};
-
-{
-    FTLibrary l; //Aquisição do recurso
-    /* code */
-} // Liberação do recurso chamando ~FTLibrary()
-</code></pre>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section2rule11">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>12.</h4>
-                </td>
-                <td>
-                  <h4>Utilizar <em>forward declaration</em> nos arquivos de cabeçalho ao invés de <code>#include</code>, sempre que possível</h4>
-                  <div id="section2rule12" class="collapse">
-
-<ul>
-<li>Acelera a compilação</li>
-<li>O tipo incompleto pode ser usado em assinatura de métodos, ou na declaração de membros como referência ou ponteiro</li>
-</ul>
-
-<h3>Exemplo:</h3>
-
-<pre><code>// forward declaration de X
-class X;
-
-class Foo
-{
-
-    // declaração de métodos com o tipo incompleto como parâmetro ou retorno
-    void f1(X);
-    X    f2();
-    void f3(X*, X&amp;);
-    X&amp;   f4();
-    X*   f5();
-
-    // tipo incompleto como membro: apenas se for ponteiro ou referência
-    X* pt;
-    X&amp; pt;
-    X  pt; // ERRO!
-
-};
-</code></pre>
-
-<h3>Referências:</h3>
-
-<p><a href="http://stackoverflow.com/questions/553682/when-can-i-use-a-forward-declaration">When can I use a forward declaration?</a></p>
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section2rule12">+</button>
-                </td>
-            </tr></tbody></table>
-          </div>
-          <div class="bs-docs-section">
-            <h1 id="section3" class="page-header">Estilo: Layout</h1>
-            <div class="lead">
-
-<h3>Visão geral do padrão de estilo:</h3>
-
-<pre><code>// arquivo de cabeçalho:
+                                 <!---------------------------------------------------------------------------->
+                                 <br>
+                              </div>
+                           </td>
+                           <td style="vertical-align: text-top;">
+                              <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section2rule10">+</button>
+                           </td>
+                        </tr>                        
+                        
+                     </tbody>
+                  </table>
+               </div>
+               <div class="bs-docs-section">
+                  <h1 id="section3" class="page-header">Estilo: Layout</h1>
+                  <div class="lead">
+                     <h3>Visión general del padrón de estilo:</h3>
+                     <pre><code>// archivo de cabecera:
 
 /**
  * Documente a declaração da classe
@@ -1033,48 +199,40 @@ int Widget::doSomething(int n)
     return out;
 }
 </code></pre>
-
-<!---------------------------------------------------------------------------->
-
-            </div>
-            <table id="sectiontable">
-              <tbody><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>1.</h4>
-                </td>
-                <td>
-                  <h4>A indentação deve ser 4 espaços. Não usar o caractere TAB.</h4>
-                  <div id="section3rule1" class="collapse">
-
-<ul>
-<li>Os 'cases' dentro de um switch devem ser indentados.</li>
-<li>Namespaces não devem ser indentados.</li>
-</ul>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
+                     <!---------------------------------------------------------------------------->
                   </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section3rule1">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>2.</h4>
-                </td>
-                <td>
-                  <h4>As chaves que abrem e fecham classes, funções e blocos tem linha exclusiva.</h4>
-                  <div id="section3rule2" class="collapse">
-
-<ul>
-<li>Não é obrigatório o uso das chaves quando houver uma única sentença ou numa
-função de que cabe numa única linha.</li>
-</ul>
-
-<h3>Exemplos:</h3>
-
-<pre><code>class Widget
+                  <table id="sectiontable">
+                     <tbody>
+                        <tr>
+                           <td style="vertical-align: text-top;">
+                              <h4>1.</h4>
+                           </td>
+                           <td>
+                              <h4>La indentación debe ser 4 espacios. No utilice el carácter TAB.</h4>
+                              <div id="section3rule1" class="collapse">
+                                 <ul>
+                                    <li>Los 'cases' dentro de un switch deben ser indentados.</li>
+                                 </ul>
+                                 <!---------------------------------------------------------------------------->
+                                 <br>
+                              </div>
+                           </td>
+                           <td style="vertical-align: text-top;">
+                              <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section3rule1">+</button>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="vertical-align: text-top;">
+                              <h4>2.</h4>
+                           </td>
+                           <td>
+                              <h4>Las llaves que abren y cierran clases, funciones y bloques tienen línea exclusiva.</h4>
+                              <div id="section3rule2" class="collapse">
+                                 <ul>
+                                    <li>No es obligatorio el uso de las llaves cuando hay una sola oración o en una función que cabe en una sola línea.</li>
+                                 </ul>
+                                 <h3>Ejemplos:</h3>
+                                 <pre><code>class Widget
 {
 public:
     // ...
@@ -1083,230 +241,150 @@ public:
     // ...
 };
 </code></pre>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section3rule2">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>3.</h4>
-                </td>
-                <td>
-                  <h4>O número máximo de colunas por linha deve ser 100.</h4>
-                  <div id="section3rule3" class="collapse">
-
-<ul>
-<li>Caso o conteúdo da linha não caiba, passar o restante para a linha abaixo com uma
-indentação extra.</li>
-<li>Não realizar a quebra de linha quando isso prejudicar a sua legibilidade.</li>
-</ul>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section3rule3">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>4.</h4>
-                </td>
-                <td>
-                  <h4>É recomendável que a declaração dos elementos de uma classe tenha a seguinte ordem: public, protected, private.</h4>
-                  <div id="section3rule4" class="collapse">
-
-<ul>
-<li>Note que as palavras chave public, protected e private devem ser indentadas
-com a classe/struct.</li>
-<li>É preferível que as declarações da seção sejam declaradas na seguinte ordem:
-Tipos, métodos, atributos</li>
-<li>Quando tudo da classe for público, é preferível o uso de structs.</li>
-</ul>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section3rule4">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>5.</h4>
-                </td>
-                <td>
-                  <h4>Operadores devem sempre estar entre dois espaços em branco.</h4>
-                  <div id="section3rule5" class="collapse">
-
-<h3>Exemplos:</h3>
-
-<pre><code>// Errado:
+                                 <!---------------------------------------------------------------------------->
+                                 <br>
+                              </div>
+                           </td>
+                           <td style="vertical-align: text-top;">
+                              <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section3rule2">+</button>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="vertical-align: text-top;">
+                              <h4>3.</h4>
+                           </td>
+                           <td>
+                              <h4>El número máximo de columnas por línea debe ser 100.</h4>
+                              <div id="section3rule3" class="collapse">
+                                 <ul>
+                                    <li>Si el contenido de la línea no cabe, pasar el resto a la línea inferior con una identación extra.</li>
+                                    <li>No realizar el salto de línea cuando esto perjudica su legibilidad.</li>
+                                 </ul>
+                                 <!---------------------------------------------------------------------------->
+                                 <br>
+                              </div>
+                           </td>
+                           <td style="vertical-align: text-top;">
+                              <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section3rule3">+</button>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="vertical-align: text-top;">
+                              <h4>4.</h4>
+                           </td>
+                           <td>
+                              <h4>Es recomendable que la declaración de los elementos de una clase tenga el siguiente orden: public, protected, private.</h4>
+                              <div id="section3rule4" class="collapse">
+                                 <ul>
+                                    <li>Tenga en cuenta que las palabras clave public, protected y private deben ser indentadas con la clase / struct.
+                                    </li>
+                                    <li>Es preferible que las declaraciones de la sección se declaran en el orden siguiente: Tipos, métodos, atributos.</li>
+                                 </ul>
+                                 <!---------------------------------------------------------------------------->
+                                 <br>
+                              </div>
+                           </td>
+                           <td style="vertical-align: text-top;">
+                              <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section3rule4">+</button>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="vertical-align: text-top;">
+                              <h4>5.</h4>
+                           </td>
+                           <td>
+                              <h4>Los operadores siempre deben estar entre dos espacios en blanco.</h4>
+                              <div id="section3rule5" class="collapse">
+                                 <h3>Ejemplos:</h3>
+                                 <pre><code>// Errado:
 auto soma = a+b;
 
 // Certo:
 auto soma = a + b;
 </code></pre>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section3rule5">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>6.</h4>
-                </td>
-                <td>
-                  <h4>Todos os parênteses, colchetes e angle brackets não devem ter espaços extras.</h4>
-                  <div id="section3rule6" class="collapse">
-
-<ul>
-<li>Só deve ter espaço depois da vírgula entre os parâmetros.</li>
-</ul>
-
-<h3>Exemplos:</h3>
-
-<pre><code>// Errado:
+                                 <!---------------------------------------------------------------------------->
+                                 <br>
+                              </div>
+                           </td>
+                           <td style="vertical-align: text-top;">
+                              <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section3rule5">+</button>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="vertical-align: text-top;">
+                              <h4>6.</h4>
+                           </td>
+                           <td>
+                              <h4>Todos los paréntesis, corchetes y "ángle brackets" no deben tener espacios extras.</h4>
+                              <div id="section3rule6" class="collapse">
+                                 <ul>
+                                    <li>Sólo debe tener espacio después de la coma entre los parámetros.</li>
+                                 </ul>
+                                 <h3>Ejemplos:</h3>
+                                 <pre><code>// Errado:
 myFunction( a, v1 + v2 );
 
 // Certo:
 myFunction(a, v1 + v2);
 </code></pre>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section3rule6">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>7.</h4>
-                </td>
-                <td>
-                  <h4>Não deve haver espaço entre parênteses e os statements, declarações e chamadas de métodos.</h4>
-                  <div id="section3rule7" class="collapse">
-
-<h3>Exemplos:</h3>
-
-<pre><code>// Errado:
+                                 <!---------------------------------------------------------------------------->
+                                 <br>
+                              </div>
+                           </td>
+                           <td style="vertical-align: text-top;">
+                              <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section3rule6">+</button>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="vertical-align: text-top;">
+                              <h4>7.</h4>
+                           </td>
+                           <td>
+                              <h4>No debe haber espacio entre paréntesis, declaraciones y llamadas de métodos.</h4>
+                              <div id="section3rule7" class="collapse">
+                                 <h3>Ejemplos:</h3>
+                                 <pre><code>// Errado:
 if (condition) doStuff (param1, param2);
 
 // Certo:
 if(condition) doStuff(param1, param2);
 </code></pre>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section3rule7">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>8.</h4>
-                </td>
-                <td>
-                  <h4>Ponteiros e referências devem ter seus caracteres especiais próximos ao tipo e não ao nome da variável.</h4>
-                  <div id="section3rule8" class="collapse">
-
-<h3>Exemplos:</h3>
-
-<pre><code>// Errado:
-Type *ptr;
-Type &amp;ref;
-
-// Certo:
-Type* ptr;
-Type&amp; ref;
-</code></pre>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section3rule8">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>9.</h4>
-                </td>
-                <td>
-                  <h4>Manter o mesmo estilo de comentário dentro de um arquivo.</h4>
-                  <div id="section3rule9" class="collapse">
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section3rule9">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>10.</h4>
-                </td>
-                <td>
-                  <h4>Os atributos da classe devem ser inicializados em linhas individuais.</h4>
-                  <div id="section3rule10" class="collapse">
-
-<ul>
-<li>A virgula deve vir antes do parâmetro.</li>
-</ul>
-
-<h3>Exemplos:</h3>
-
-<pre><code>Widget::Widget()
-    :_okButton(this)
-    ,_closeButton(this)
-    ,_attributeComboBox(this)
-{
-    // ...
-}
-</code></pre>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section3rule10">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>11.</h4>
-                </td>
-                <td>
-                  <h4>Comentários devem ser incluídos na linha anterior ao comando respeitando sua identação no código.</h4>
-                  <div id="section3rule11" class="collapse">
-
-<ul>
-<li>Isso evita que os comentários quebrem a estrutura lógica do programa.</li>
-<li>Exceção: comandos ou declarações que possuem várias linhas.</li>
-</ul>
-
-<h3>Exemplos:</h3>
-
-<pre><code>// Errado:
+                                 <!---------------------------------------------------------------------------->
+                                 <br>
+                              </div>
+                           </td>
+                           <td style="vertical-align: text-top;">
+                              <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section3rule7">+</button>
+                           </td>
+                        </tr>                        
+                        <tr>
+                           <td style="vertical-align: text-top;">
+                              <h4>9.</h4>
+                           </td>
+                           <td>
+                              <h4>Mantener el mismo estilo de comentario dentro de un archivo.</h4>
+                              <div id="section3rule9" class="collapse">
+                                 <!---------------------------------------------------------------------------->
+                                 <br>
+                              </div>
+                           </td>
+                           <td style="vertical-align: text-top;">
+                              <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section3rule9">+</button>
+                           </td>
+                        </tr>                        
+                        <tr>
+                           <td style="vertical-align: text-top;">
+                              <h4>11.</h4>
+                           </td>
+                           <td>
+                              <h4>Los comentarios deben ser incluidos en la línea anterior al comando respetando su identación en el código.</h4>
+                              <div id="section3rule11" class="collapse">
+                                 <ul>
+                                    <li>Esto evita que los comentarios rompen la estructura lógica del programa.</li>
+                                    <li>Excepción: comandos o declaraciones que tienen varias líneas.</li>
+                                 </ul>
+                                 <h3>Exemplos:</h3>
+                                 <pre><code>// Errado:
 int x = 0, y = 0, z = 0; // World Coordinates
 
 // Correto:
@@ -1322,34 +400,32 @@ const unsigned short supportedProductIDList[] =
     0x032c    // Cintiq 27QHDT
 };
 </code></pre>
-
-                  <br>
+                                 <br>
+                              </div>
+                           </td>
+                           <td style="vertical-align: text-top;">
+                              <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section3rule11">+</button>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <div class="bs-docs-section">
+                  <h1 id="section4" class="page-header">Estilo: Nomenclatura</h1>
+                  <div class="lead">
+                     <!---------------------------------------------------------------------------->
                   </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section3rule11">+</button>
-                </td>
-            </tr></tbody></table>
-          </div>
-          <div class="bs-docs-section">
-            <h1 id="section4" class="page-header">Estilo: Nomenclatura</h1>
-            <div class="lead">
-
-<!---------------------------------------------------------------------------->
-
-            </div>
-            <table id="sectiontable">
-              <tbody><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>1.</h4>
-                </td>
-                <td>
-                  <h4>Comentários de classes e métodos em arquivos de header devem seguir o padrão <strong>JavaDoc</strong></h4>
-                  <div id="section4rule1" class="collapse">
-
-<h3>Exemplo:</h3>
-
-<pre><code> /**
+                  <table id="sectiontable">
+                     <tbody>
+                        <tr>
+                           <td style="vertical-align: text-top;">
+                              <h4>1.</h4>
+                           </td>
+                           <td>
+                              <h4>Comentarios de clases e métodos en archivos de header deben seguir o patron <strong>JavaDoc</strong></h4>
+                              <div id="section4rule1" class="collapse">
+                                 <h3>Ejemplo:</h3>
+                                 <pre><code> /**
   *  @brief Class that maintains a variable-sized stack of integers.  
   *  @bugs No known bug
   */  
@@ -1395,151 +471,78 @@ const unsigned short supportedProductIDList[] =
      int* _elements;
   };
 </code></pre>
-
-<h3>Referências:</h3>
-
-<p><a href="http://www.stack.nl/~dimitri/doxygen/manual/docblocks.html#cppblock">Doxygen Manual: Comment blocks for C-like languages (C/C++/C#/Objective-C/PHP/Java)</a></p>
-
-<p><a href="http://www.stack.nl/~dimitri/doxygen/manual/commands.html">Doxygen Manual: Special Commands</a></p>
-
-<p><a href="http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html#examples">Oracle: How to Write Doc Comments for the Javadoc Tool</a></p>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section4rule1">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>2.</h4>
-                </td>
-                <td>
-                  <h4>O código deve ser escritos em inglês e comentários em português.</h4>
-                  <div id="section4rule2" class="collapse">
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section4rule2">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>3.</h4>
-                </td>
-                <td>
-                  <h4>Nomenclaturas de tipos, variáveis, valores de enums e métodos usam <em>CamelCase</em>.</h4>
-                  <div id="section4rule3" class="collapse">
-
-<ul>
-<li>Tipos (structs, classes, enums, etc.) devem ser escritos com <code>CamelCase</code>,
-começando com maiúscula.</li>
-<li>Variáveis e funções/métodos devem ser escritas com <code>camelCase</code>, começando com
-minúscula.</li>
-<li>É preferível que funções e métodos comecem com verbos, pois representam
-ações.</li>
-</ul>
-
-<h3>Referências:</h3>
-
-<p><a href="https://en.wikipedia.org/wiki/Camel_case" title="Wikipédia: Camel Case">Wikipédia: Camel Case</a></p>
-
-<p>McConnel, S., <strong>Code Complete, Second Edition</strong> - Chapter 7 - High-Quality Routines, pp. 171-173</p>
-
-<p>McConnel, S., <strong>Code Complete, Second Edition</strong> - Chapter 11 - The Power of Variable Names, p. 274</p>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section4rule3">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>4.</h4>
-                </td>
-                <td>
-                  <h4>Macros devem ser escritos em maiúsculas usando underscore para separar as palavras.</h4>
-                  <div id="section4rule4" class="collapse">
-
-<ul>
-<li>Não use <code>#define</code> para declarar constantes. Use a palavra reservada <code>const</code> para isso.</li>
-</ul>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section4rule4">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>5.</h4>
-                </td>
-                <td>
-                  <h4>Atributos da classe devem ter um prefixo underscore.</h4>
-                  <div id="section4rule5" class="collapse">
-
-<ul>
-<li>Tanto atributos públicos quanto privados devem seguir a regra.</li>
-</ul>
-
-<!---------------------------------------------------------------------------->
-
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section4rule5">+</button>
-                </td>
-              </tr><tr>
-                <td style="vertical-align: text-top;">
-                  <h4>6.</h4>
-                </td>
-                <td>
-                  <h4>Variáveis que representam elementos de interface devem ter como sufixo o tipo do elemento.</h4>
-                  <div id="section4rule6" class="collapse">
-
-<ul>
-<li>Atributos que representam os elementos devem ter o mesmo nome referenciado no glade.</li>
-</ul>
-                  <br>
-                  </div>
-                </td>
-                <td style="vertical-align: text-top;">
-                  <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section4rule6">+</button>
-                </td>
-            </tr></tbody></table>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <ul class="nav nav-pill nav-stacked affix-top" data-spy="affix" data-offset-top="250">
-              <li><a href="http://miro/padrao/#section1">Regras Gerais</a></li>
-              <li><a href="http://miro/padrao/#section2">Boas Práticas</a></li>
-              <li><a href="http://miro/padrao/#section3">Estilo: Layout</a></li>
-              <li><a href="http://miro/padrao/#section4">Estilo: Nomenclatura</a></li>
-          </ul>
-        </div>
-        </div>
+                                
+                                 <!---------------------------------------------------------------------------->
+                                 <br>
+                              </div>
+                           </td>
+                           <td style="vertical-align: text-top;">
+                              <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section4rule1">+</button>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="vertical-align: text-top;">
+                              <h4>2.</h4>
+                           </td>
+                           <td>
+                              <h4>El código debe ser escrito en ingles y comentarios en portugues.</h4>
+                              <div id="section4rule2" class="collapse">
+                                 <!---------------------------------------------------------------------------->
+                                 <br>
+                              </div>
+                           </td>
+                           <td style="vertical-align: text-top;">
+                              <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section4rule2">+</button>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="vertical-align: text-top;">
+                              <h4>3.</h4>
+                           </td>
+                           <td>
+                              <h4>Las nomenclaturas de tipos, variables, valores de enums y métodos utilizan<em>CamelCase</em>.</h4>
+                              <div id="section4rule3" class="collapse">
+                                 <ul>
+                                    <li>Tipos (structs, classes, enums, etc.) deben ser escritos con <code>CamelCase</code>, comezando con mayúscula.
+                                    </li>
+                                    <li>Variables y funciones/métodos deben ser escritas con <code>camelCase</code>, comenzando con minúscula.
+                                    </li>
+                                    <li>Es preferible que funciones y métodos comiencen con verbos, pues representan ações.
+                                    </li>
+                                 </ul>
+                                 <h3>Referencias:</h3>
+                                 <p><a href="https://en.wikipedia.org/wiki/Camel_case" title="Wikipédia: Camel Case">Wikipédia: Camel Case</a></p>
+                                 <p>McConnel, S., <strong>Code Complete, Second Edition</strong> - Chapter 7 - High-Quality Routines, pp. 171-173</p>
+                                 <p>McConnel, S., <strong>Code Complete, Second Edition</strong> - Chapter 11 - The Power of Variable Names, p. 274</p>
+                                 <!---------------------------------------------------------------------------->
+                                 <br>
+                              </div>
+                           </td>
+                           <td style="vertical-align: text-top;">
+                              <button type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-target="#section4rule3">+</button>
+                           </td>
+                        </tr>                                                                        
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+            <div class="col-md-3">
+               <ul class="nav nav-pill nav-stacked affix-top" data-spy="affix" data-offset-top="250">
+                  <li><a href="http://miro/padrao/#section1">Reglas Generales</a></li>
+                  <li><a href="http://miro/padrao/#section2">Buenas Prácticas</a></li>
+                  <li><a href="http://miro/padrao/#section3">Estilo: Layout</a></li>
+                  <li><a href="http://miro/padrao/#section4">Estilo: Nomenclatura</a></li>
+               </ul>
+            </div>
+         </div>
       </div>
-    
-    <footer class="footer">
-      <div class="container footercontainer">
-        <p class="text-muted">© Tecgraf v3o2 2017.</p>
-      </div>
-    </footer>
-    <script src="./files/jquery.min.js.download"></script>
-    <script src="./files/bootstrap.min.js.download"></script>
-    <script src="./files/docs.min.js.download"></script>
-  
-
-</body></html>
+      <footer class="footer">
+         <div class="container footercontainer">
+            <p class="text-muted">© CFE-2018.</p>
+         </div>
+      </footer>
+      <script src="./files/jquery.min.js.download"></script>
+      <script src="./files/bootstrap.min.js.download"></script>
+      <script src="./files/docs.min.js.download"></script>
+   </body>
+</html>
