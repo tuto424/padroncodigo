@@ -206,10 +206,7 @@ public class Blah extends SomeClass {
  // ...implementation goes here...
  }
 }                     
-                    
-                     
-                     
-</code></pre>
+ </code></pre>
                      <!---------------------------------------------------------------------------->
                   </div>
                   <table id="sectiontable">
@@ -243,14 +240,11 @@ public class Blah extends SomeClass {
                                     <li>No es obligatorio el uso de las llaves cuando hay una sola oración o en una función que cabe en una sola línea.</li>
                                  </ul>
                                  <h3>Ejemplos:</h3>
-                                 <pre><code>class Widget
-{
-public:
-    // ...
-    // Função inline não precisa de identação:
-    float getValue() {return _value;}
-    // ...
-};
+                                 <pre><code>class Widget{
+ public float getValue() {
+  return value;
+ }
+}
 </code></pre>
                                  <!---------------------------------------------------------------------------->
                                  <br>
@@ -307,10 +301,10 @@ public:
                               <h4>Los operadores siempre deben estar entre dos espacios en blanco.</h4>
                               <div id="section3rule5" class="collapse">
                                  <h3>Ejemplos:</h3>
-                                 <pre><code>// Errado:
+                                 <pre><code>// Bad:
 auto soma = a+b;
 
-// Certo:
+// Good:
 auto soma = a + b;
 </code></pre>
                                  <!---------------------------------------------------------------------------->
@@ -332,10 +326,10 @@ auto soma = a + b;
                                     <li>Sólo debe tener espacio después de la coma entre los parámetros.</li>
                                  </ul>
                                  <h3>Ejemplos:</h3>
-                                 <pre><code>// Errado:
+                                 <pre><code>// Bad:
 myFunction( a, v1 + v2 );
 
-// Certo:
+// Good:
 myFunction(a, v1 + v2);
 </code></pre>
                                  <!---------------------------------------------------------------------------->
@@ -354,10 +348,10 @@ myFunction(a, v1 + v2);
                               <h4>No debe haber espacio entre paréntesis, declaraciones y llamadas de métodos.</h4>
                               <div id="section3rule7" class="collapse">
                                  <h3>Ejemplos:</h3>
-                                 <pre><code>// Errado:
+                                 <pre><code>// Bad:
 if (condition) doStuff (param1, param2);
 
-// Certo:
+// Good:
 if(condition) doStuff(param1, param2);
 </code></pre>
                                  <!---------------------------------------------------------------------------->
@@ -395,21 +389,21 @@ if(condition) doStuff(param1, param2);
                                     <li>Excepción: comandos o declaraciones que tienen varias líneas.</li>
                                  </ul>
                                  <h3>Exemplos:</h3>
-                                 <pre><code>// Errado:
+                                 <pre><code>// Bad:
 int x = 0, y = 0, z = 0; // World Coordinates
 
-// Correto:
+// Good:
 // Coordenadas de mundo
 int x = 0, y = 0, z = 0;
 
-// Exceção:
+// Except:
 const unsigned short supportedProductIDList[] =
 {
     0x0309,   // Cintiq Hybrid
     0x00f6,   // Cintiq 24HDT
     0x005e,   // Cintiq 22HDT
     0x032c    // Cintiq 27QHDT
-};
+}
 </code></pre>
                                  <br>
                               </div>
@@ -446,10 +440,6 @@ const unsigned short supportedProductIDList[] =
  public void doSomethingElse(Object param1, Object param2) {
   // ...implementation goes here...
  }
-
-                                 
-                                 
-                                 
 </code></pre>
                                 
                                  <!---------------------------------------------------------------------------->
@@ -525,4 +515,5 @@ const unsigned short supportedProductIDList[] =
       <script src="./files/docs.min.js.download"></script>
    </body>
 </html>
+
 
