@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<!-- saved from url=(0019)http://miro/padrao/ -->
 <html lang="en">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>CFE-LS Padrón de Código</title>
+      <title>CFE-LS Patrón de Código</title>
       <link href="./files/bootstrap.min.css" rel="stylesheet">
       <link href="./files/docs.min.css" rel="stylesheet">
       <style>
@@ -62,14 +61,14 @@
             <h3 class="text-muted">CFE-LS</h3>
          </div>
          <div class="jumbotron">
-            <h1>Patron de Código</h1>
+            <h1>Patrón de Código</h1>
          </div>
       </div>
       <div class="container bs-docs-container">
          <div class="row">
             <div class="col-md-9" role="main">
                <div class="bs-docs-section">
-                  <h1 id="section2" class="page-header">Buenas Práticas</h1>
+                  <h1 id="section2" class="page-header">Buenas Prácticas</h1>
                   <div class="lead">
                      <!---------------------------------------------------------------------------->
                   </div>
@@ -83,8 +82,7 @@
                               <h4>Las variables deben declararse en el menor escopo posible y más próximo a su utilización</h4>
                               <div id="section2rule2" class="collapse">
                                  <ul>
-                                    <li>Manteniendo las operaciones sobre una variable en un escopo pequeño, es más fácil controlar los efectos de la variable.
-.</li>
+                                    <li>Implementar las operaciones sobre una variable en un escopo pequeño, es más fácil controlar los efectos de la variable.</li>
                                  </ul>
                                  <!---------------------------------------------------------------------------->
                                  <br>
@@ -124,7 +122,7 @@
                                     <li>Es mejor introducir variables booleanas temporales. De esta forma el programa gana una documentación automática.</li>
                                     <li>El código es más fácil de leer, depurar y mantener.</li>
                                  </ul>
-                                 <h3>Exemplos:</h3>
+                                 <h3>Ejemplos:</h3>
                                  <pre><code>bool isFinished = (elementNo &lt; 0) || (elementNo &gt; maxElement);
 bool isRepeatedEntry = (elementNo == lastElement);
 if (isFinished || isRepeatedEntry)
@@ -147,7 +145,7 @@ if (isFinished || isRepeatedEntry)
                <div class="bs-docs-section">
                   <h1 id="section3" class="page-header">Estilo: Layout</h1>
                   <div class="lead">
-                     <h3>Visión general del padrón de estilo:</h3>
+                     <h3>Visión general del patrón de estilo:</h3>
                      <pre><code>
 /*
  * @(#)Blah.java        1.82 99/03/18
@@ -388,7 +386,7 @@ if(condition) doStuff(param1, param2);
                                     <li>Esto evita que los comentarios rompen la estructura lógica del programa.</li>
                                     <li>Excepción: comandos o declaraciones que tienen varias líneas.</li>
                                  </ul>
-                                 <h3>Exemplos:</h3>
+                                 <h3>Ejemplos:</h3>
                                  <pre><code>// Bad:
 int x = 0, y = 0, z = 0; // World Coordinates
 
@@ -427,7 +425,7 @@ const unsigned short supportedProductIDList[] =
                               <h4>1.</h4>
                            </td>
                            <td>
-                              <h4>Comentarios de clases e métodos en archivos de header deben seguir o patron <strong>JavaDoc</strong></h4>
+                              <h4>Comentarios de clases y métodos en archivos de header deben seguir el patrón <strong>JavaDoc</strong></h4>
                               <div id="section4rule1" class="collapse">
                                  <h3>Ejemplo:</h3>
                                  <pre><code> 
@@ -515,5 +513,6 @@ const unsigned short supportedProductIDList[] =
       <script src="./files/docs.min.js.download"></script>
    </body>
 </html>
+
 
 
